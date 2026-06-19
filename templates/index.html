@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>sentiment Analyzer</title>
+</head>
+<body>
+	<h2>sentiment Analyzer</h2>
+
+	<form method ="post">
+  		<textarea name="text" rows="5" cols="50" placeholder="Enter text"></textarea><br><br>
+           <input type="submit" value="Analyze">
+    </form>
+
+    {% if cleaned_text %}
+        <h3>Processed Text:</h3>
+        <p>{{ cleaned_text }}</p>
+
+        <h3>Sentiment:</h3>
+        <h2>{{ sentiment }}</h2>
+    {% endif %}
+</body>
+</html>

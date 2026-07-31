@@ -75,9 +75,11 @@ module.exports = (req, res) => {
   }
   
   if (req.method === 'POST') {
-    const { text } = req.body;
+    const text = req.body && typeof req.body.text === 'string'
+      ? req.body.text
+      : '';
     
-    if (!text || !text.trim()) {
+    if (!text.trim()) {
       res.status(400).json({ error: 'Text is required' });
       return;
     }
